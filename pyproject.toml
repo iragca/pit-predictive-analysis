@@ -16,11 +16,16 @@ classifiers = [
     
 ]
 dependencies = [
+    "httpx>=0.28.1",
+    "ipykernel>=7.1.0",
+    "iragca>=0.2.9",
     "mkdocs",
     "pip",
+    "pydantic>=2.12.5",
     "pytest",
     "python-dotenv",
     "ruff",
+    "tqdm>=4.67.1",
 ]
 requires-python = "~=3.13.0"
 
