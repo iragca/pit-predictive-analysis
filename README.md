@@ -1,9 +1,9 @@
 # pit-predictive-analysis
 
-A short description of the project.
+This performance integrated task is part of our coursework in DS411 Predictive Analytics, which focuses on the field of natural language processing (NLP), sentiment analysis and topic modeling. This repository contains the documents, articles and code concerning with this project.
 
 > [!NOTE]
-> For developers and contributors for this project, please refer to the [contributing guide](CONTRIBUTING.md).
+> For developers and contributors of this project, please refer to the [contributing guide](CONTRIBUTING.md).
 
 ## Project Organization
 
