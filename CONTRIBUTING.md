@@ -1,0 +1,1 @@
+Please install [uv](https://docs.astral.sh/uv/)
