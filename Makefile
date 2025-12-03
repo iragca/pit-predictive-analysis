@@ -15,8 +15,6 @@ PYTHON_INTERPRETER = python
 .PHONY: requirements
 requirements:
 	uv sync
-	
-
 
 
 ## Delete all compiled Python files
@@ -29,21 +27,26 @@ clean:
 ## Lint using ruff (use `make format` to do formatting)
 .PHONY: lint
 lint:
-	ruff format --check
-	ruff check
+	uv run ruff format --check
+	uv run ruff check
+
 
 ## Format source code with ruff
 .PHONY: format
 format:
-	ruff check --fix
-	ruff format
-
+	uv run ruff check --fix
+	uv run ruff format
 
 
 ## Run tests
 .PHONY: test
 test:
-	python -m pytest tests
+	uv run pytest tests
+
+## Run mkdocs local server
+.PHONY: docs
+docs:
+	uv run mkdocs serve -f docs/mkdocs.yml -a 0.0.0.0:7000
 
 
 ## Set up Python interpreter environment
