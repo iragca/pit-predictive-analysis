@@ -20,6 +20,7 @@ dependencies = [
     "ipykernel>=7.1.0",
     "iragca>=0.2.9",
     "mkdocs",
+    "more-itertools>=10.8.0",
     "pip",
     "pydantic>=2.12.5",
     "pytest",
