@@ -16,6 +16,14 @@ uv run something.py #  Equivalent to python -m something.py
 
 To use the environment in notebooks, simply select the `.venv` environment that was created in this repository as the kernel.
 
+## Environment variables
+
+Copy `.env.example` and rename it to `.env`
+```bash
+cp .env.example .env
+```
+Then add the values for each variable.
+
 ## Contributing
 
 The main notebook is found [here](notebooks/1.0-random-useless-facts.ipynb).
