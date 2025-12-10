@@ -6,36 +6,33 @@ build-backend = "flit_core.buildapi"
 name = "lib"
 version = "0.0.1"
 description = "A short description of the project."
-authors = [
-  { name = "Your name (or your organization/company/team)" },
-]
+authors = [{ name = "Your name (or your organization/company/team)" }]
 
 readme = "README.md"
-classifiers = [
-    "Programming Language :: Python :: 3",
-    
-]
+classifiers = ["Programming Language :: Python :: 3"]
 dependencies = [
-    "bertopic>=0.17.4",
-    "contractions>=0.1.73",
-    "gensim>=4.4.0",
-    "httpx>=0.28.1",
-    "ipykernel>=7.1.0",
-    "iragca>=0.2.9",
-    "mkdocs",
-    "nltk>=3.9.2",
-    "pandas>=2.3.3",
-    "pip",
-    "pydantic>=2.12.5",
-    "pytest",
-    "python-dotenv",
-    "ruff",
-    "scikit-learn>=1.8.0",
-    "seaborn>=0.13.2",
-    "sentence-transformers>=5.1.2",
-    "supabase>=2.24.0",
-    "tqdm>=4.67.1",
-    "umap-learn>=0.5.9.post2",
+  "bertopic>=0.17.4",
+  "contractions>=0.1.73",
+  "gensim>=4.4.0",
+  "httpx>=0.28.1",
+  "ipykernel>=7.1.0",
+  "iragca>=0.2.9",
+  "mkdocs",
+  "nbformat>=5.10.4",
+  "nltk>=3.9.2",
+  "pandas>=2.3.3",
+  "pip",
+  "pydantic>=2.12.5",
+  "pytest",
+  "python-dotenv",
+  "ruff",
+  "scikit-learn>=1.8.0",
+  "seaborn>=0.13.2",
+  "sentence-transformers>=5.1.2",
+  "supabase>=2.24.0",
+  "torch>=2.9.1",
+  "tqdm>=4.67.1",
+  "umap-learn>=0.5.9.post2",
 ]
 requires-python = "~=3.13.0"
 
@@ -46,9 +43,21 @@ src = ["lib"]
 include = ["pyproject.toml", "lib/**/*.py"]
 
 [tool.ruff.lint]
-extend-select = ["I"]  # Add import sorting
+extend-select = ["I"] # Add import sorting
 
 [tool.ruff.lint.isort]
 known-first-party = ["lib"]
 force-sort-within-sections = true
 
+[tool.uv.sources]
+torch = [
+  { index = "pytorch-cu126", marker = "sys_platform == 'linux' or sys_platform == 'win32'" },
+]
+torchvision = [
+  { index = "pytorch-cu126", marker = "sys_platform == 'linux' or sys_platform == 'win32'" },
+]
+
+[[tool.uv.index]]
+name = "pytorch-cu126"
+url = "https://download.pytorch.org/whl/cu126"
+explicit = true
